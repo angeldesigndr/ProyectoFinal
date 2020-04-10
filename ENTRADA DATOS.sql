@@ -1,0 +1,51 @@
+--INSERTAR NUEVA CLASIFICACION
+INSERT INTO CLASIFICACION (IDClasificacion, Clasificacion_Material)
+--SOLO CAMBIAR ESTOS VALORES EN EL MISMO ORDEN QUE EL ENCABEZADO Y SEGUIR LA SECUENCIA DE LOS IDS:
+
+VALUES 
+(18,--IDCLASIFICACION
+'Aviacion') --CLASIFICACION MATERIAL
+
+----------------------------------------------------------------------------------------------------------------
+
+--INSERTAR NUEVO SUPLIDOR
+INSERT INTO SUPLIDOR (IDSuplidor, N_Suplidor, RNC, Numero, Direccion, Vendedor)
+--SOLO CAMBIAR ESTOS VALORES EN EL MISMO ORDEN QUE EL ENCABEZADO Y SEGUIR LA SECUENCIA DE LOS IDS:
+
+VALUES 
+(5, --IDSUPLIDOR
+'Airlines', --NOMBRE SUPLIDOR
+101002347, --RNC
+8094457868, --NUMERO
+'C/SIMEON #17, DISTRITO NACIONAL', --DIRECCION
+'Luis') --VENDEDOR
+
+----------------------------------------------------------------------------------------------------------------
+
+--INSERTAR NUEVO LOTE
+INSERT INTO MATERIAL (IDMaterial,Nombre,Peso_gr,IDSuplidor,UM,IDclasificacion,Costo,N_Lote)
+--SOLO CAMBIAR ESTOS VALORES EN EL MISMO ORDEN QUE EL ENCABEZADO Y SEGUIR LA SECUENCIA DE LOS IDS:
+
+VALUES 
+(69, --ID MATERIAL
+'Ala de avion', --NOMBRE MATERIAL
+400, --PESO
+5, --ID SUPLIDOR
+'UND', --UNIDAD DE MEDIDA
+18, --CLASIFICACION ID
+2000, -- COSTO
+2088) --NUMERO DE LOTE
+
+----------------------------------------------------------------------------------------------------------------
+
+--INSERTAR NUEVO MATERIAL
+INSERT INTO LOTE (N_Lote, Cantidad, IDSuplidor, IDMaterial,F_Entrada,	F_Vencimiento)
+--SOLO CAMBIAR ESTOS VALORES EN EL MISMO ORDEN QUE EL ENCABEZADO Y SEGUIR LA SECUENCIA DE LOS IDS:
+
+VALUES
+(2088, --NUMERO DE LOTE
+10, -- CANTIDAD
+5, -- IDSUPLIDOR (DEBE ESTAR CREADO O ESTARLO CREANDO AHORA
+69, --IDMATERIAL
+DATEADD (DD, 0, '06/05/2020'), --FECHA ENTRADA
+DATEADD (DD, 0, '06/10/2020')) --FECHA VENCIMIENTO
